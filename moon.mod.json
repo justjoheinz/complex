@@ -1,12 +1,12 @@
 {
   "name": "justjoheinz/complex",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "deps": {
   },
   "readme": "README.md",
   "repository": "https://github.com/justjoheinz/complex",
   "license": "Apache-2.0",
-  "keywords": [],
+  "keywords": ["complex number", "math", "arithmetic"],
   "description": "Complex number arithmetics",
   "source": "src"
 }
