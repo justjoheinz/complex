@@ -69,3 +69,10 @@ test "Complex::Show/zero" {
   let v = Complex::{ real: 0.0, imag: 1.0 }
   inspect!(v, content="0+1i")
 }
+
+
+test "Complex::to_string" {
+  let a :Complex = { real: 1.0, imag: 2.0 }
+  let s = a.to_string()
+  inspect!(s, content="1+2i")
+}

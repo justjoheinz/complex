@@ -4,7 +4,7 @@ pub(all) struct Complex {
   imag : Double
 } derive(Eq)
 
-impl Show for Complex with output(self, logger) {
+pub impl Show for Complex with output(self, logger) {
   let (r, i) = (self.real, self.imag)
   Show::output(r, logger)
   if i < 0 {
