@@ -2,7 +2,21 @@
 pub(all) struct Complex {
   real : Double
   imag : Double
-} derive(Show, Eq)
+} derive(Eq)
+
+impl Show for Complex with output(self, logger) {
+  let (r, i) = (self.real, self.imag)
+  Show::output(r, logger)
+  if i < 0 {
+    logger.write_char('-')
+  } else {
+    logger.write_char('+')
+  }
+  Show::output(i.abs(), logger)
+  logger.write_char('i')
+}
+
+
 
 ///| @alert deprecated "Use the structure directly instead"
 pub fn Complex::new(real : Double, imag : Double) -> Complex {
