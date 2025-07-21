@@ -35,18 +35,18 @@ pub impl Mul for Complex with op_mul(self, other) {
   }
 }
 
-///| substract two complex numbers.
-pub fn op_sub(self : Complex, other : Complex) -> Complex {
+///|
+pub impl Sub for Complex with op_sub(self, other) {
   Complex::{ real: self.real - other.real, imag: self.imag - other.imag }
 }
 
-///| compute the negative of a complex number.
-pub fn op_neg(self : Complex) -> Complex {
+///|
+pub impl Neg for Complex with op_neg(self) {
   Complex::{ real: -self.real, imag: -self.imag }
 }
 
-///| divide two complex numbers.
-pub fn op_div(self : Complex, other : Complex) -> Complex {
+///|
+pub impl Div for Complex with op_div(self, other) {
   let denom : Double = other.real * other.real + other.imag * other.imag
   Complex::{
     real: (self.real * other.real + self.imag * other.imag) / denom,
