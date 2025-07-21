@@ -4,6 +4,7 @@ pub(all) struct Complex {
   imag : Double
 } derive(Eq)
 
+///|
 pub impl Show for Complex with output(self, logger) {
   let (r, i) = (self.real, self.imag)
   Show::output(r, logger)
@@ -16,20 +17,18 @@ pub impl Show for Complex with output(self, logger) {
   logger.write_char('i')
 }
 
-
-
 ///| @alert deprecated "Use the structure directly instead"
 pub fn Complex::new(real : Double, imag : Double) -> Complex {
   { real, imag }
 }
 
-///| Define the addition of two complex numbers.
-pub fn op_add(self : Complex, other : Complex) -> Complex {
+///|
+pub impl Add for Complex with op_add(self, other) {
   Complex::{ real: self.real + other.real, imag: self.imag + other.imag }
 }
 
-///| multiply two complex numbers.
-pub fn op_mul(self : Complex, other : Complex) -> Complex {
+///|
+pub impl Mul for Complex with op_mul(self, other) {
   Complex::{
     real: self.real * other.real - self.imag * other.imag,
     imag: self.real * other.imag + self.imag * other.real,

@@ -25,3 +25,7 @@ let i = a.reciprocal()
 ``` sh
 moon add justjoheinz/complex
 ```
+
+## Moon version 
+
+tested with `moon 0.1.20250721 (1581c56 2025-07-21)`
