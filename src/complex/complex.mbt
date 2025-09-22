@@ -23,12 +23,12 @@ pub fn Complex::new(real : Double, imag : Double) -> Complex {
 }
 
 ///|
-pub impl Add for Complex with op_add(self, other) {
+pub impl Add for Complex with add(self, other) {
   Complex::{ real: self.real + other.real, imag: self.imag + other.imag }
 }
 
 ///|
-pub impl Mul for Complex with op_mul(self, other) {
+pub impl Mul for Complex with mul(self, other) {
   Complex::{
     real: self.real * other.real - self.imag * other.imag,
     imag: self.real * other.imag + self.imag * other.real,
@@ -36,17 +36,17 @@ pub impl Mul for Complex with op_mul(self, other) {
 }
 
 ///|
-pub impl Sub for Complex with op_sub(self, other) {
+pub impl Sub for Complex with sub(self, other) {
   Complex::{ real: self.real - other.real, imag: self.imag - other.imag }
 }
 
 ///|
-pub impl Neg for Complex with op_neg(self) {
+pub impl Neg for Complex with neg(self) {
   Complex::{ real: -self.real, imag: -self.imag }
 }
 
 ///|
-pub impl Div for Complex with op_div(self, other) {
+pub impl Div for Complex with div(self, other) {
   let denom : Double = other.real * other.real + other.imag * other.imag
   Complex::{
     real: (self.real * other.real + self.imag * other.imag) / denom,
