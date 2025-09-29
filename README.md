@@ -1,3 +1,5 @@
+[![CI](https://github.com/justjoheinz/complex/actions/workflows/ci.yml/badge.svg)](https://github.com/justjoheinz/complex/actions/workflows/ci.yml)
+
 This repository provides methods to calculate with complex numbers.
 
 ```moonbit
