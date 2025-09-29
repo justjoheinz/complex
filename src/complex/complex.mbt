@@ -1,4 +1,5 @@
-///| A complex number with real and imaginary parts.
+///|
+/// A complex number with real and imaginary parts.
 pub(all) struct Complex {
   real : Double
   imag : Double
@@ -17,7 +18,8 @@ pub impl Show for Complex with output(self, logger) {
   logger.write_char('i')
 }
 
-///| @alert deprecated "Use the structure directly instead"
+///|
+/// @alert deprecated "Use the structure directly instead"
 pub fn Complex::new(real : Double, imag : Double) -> Complex {
   { real, imag }
 }
@@ -54,12 +56,14 @@ pub impl Div for Complex with div(self, other) {
   }
 }
 
-///| Calculate the absolute value of a complex number.
+///|
+/// Calculate the absolute value of a complex number.
 pub fn abs(self : Complex) -> Double {
   (self.real * self.real + self.imag * self.imag).sqrt()
 }
 
-///| Calculate the conjugate of a complex number
+///|
+/// Calculate the conjugate of a complex number
 pub fn conjugate(self : Complex) -> Complex {
   Complex::{ real: self.real, imag: -self.imag }
 }
@@ -70,5 +74,6 @@ pub fn reciprocal(self : Complex) -> Complex {
   Complex::{ real: self.real / denom, imag: -self.imag / denom }
 }
 
-///| The zero complex number.
+///|
+/// The zero complex number.
 pub let zero : Complex = { real: 0, imag: 0 }
