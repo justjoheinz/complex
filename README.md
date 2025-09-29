@@ -7,11 +7,11 @@ let b = a + a
 // Substraction
 let c = b - a
 // Multiplication
-let d = a * b 
+let d = a * b
 // Negation
 let e = - a
 // Division
-let f = a / b 
+let f = a / b
 // Abs / length
 let g = a.abs()
 // Conjugate
@@ -22,10 +22,10 @@ let i = a.reciprocal()
 
 ## Installation
 
-``` sh
+```sh
 moon add justjoheinz/complex
 ```
 
-## Moon version 
+## Moon version
 
-tested with `moon 0.1.20250721 (1581c56 2025-07-21)`
+tested with `moon 0.1.20250918 (e5fa392 2025-09-18)`
