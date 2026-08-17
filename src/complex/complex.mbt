@@ -6,7 +6,7 @@ pub(all) struct Complex {
 } derive(Eq)
 
 ///|
-pub impl Show for Complex with output(self, logger) {
+pub impl Show for Complex with fn output(self, logger) {
   let (r, i) = (self.real, self.imag)
   Show::output(r, logger)
   if i < 0 {
@@ -25,12 +25,12 @@ pub fn Complex::new(real : Double, imag : Double) -> Complex {
 }
 
 ///|
-pub impl Add for Complex with add(self, other) {
+pub impl Add for Complex with fn add(self, other) {
   Complex::{ real: self.real + other.real, imag: self.imag + other.imag }
 }
 
 ///|
-pub impl Mul for Complex with mul(self, other) {
+pub impl Mul for Complex with fn mul(self, other) {
   Complex::{
     real: self.real * other.real - self.imag * other.imag,
     imag: self.real * other.imag + self.imag * other.real,
@@ -38,17 +38,17 @@ pub impl Mul for Complex with mul(self, other) {
 }
 
 ///|
-pub impl Sub for Complex with sub(self, other) {
+pub impl Sub for Complex with fn sub(self, other) {
   Complex::{ real: self.real - other.real, imag: self.imag - other.imag }
 }
 
 ///|
-pub impl Neg for Complex with neg(self) {
+pub impl Neg for Complex with fn neg(self) {
   Complex::{ real: -self.real, imag: -self.imag }
 }
 
 ///|
-pub impl Div for Complex with div(self, other) {
+pub impl Div for Complex with fn div(self, other) {
   let denom : Double = other.real * other.real + other.imag * other.imag
   Complex::{
     real: (self.real * other.real + self.imag * other.imag) / denom,
