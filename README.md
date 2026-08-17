@@ -30,4 +30,4 @@ moon add justjoheinz/complex
 
 ## Moon version
 
-tested with `moon 0.1.20251030 (cf54fca 2025-10-30)`
+tested with `moon 0.1.20260807 (4da23f8 2026-08-07)`
