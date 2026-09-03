@@ -28,17 +28,17 @@ impl @quickcheck.Arbitrary for Complex with fn arbitrary(_size, rs) {
     (rs.next_double() * 2.0 - 1.0) * span
   }
 
-  { real: coord(), imag: coord() }
+  { real: coord(), imag: coord(), }
 }
 
 ///|
 /// Shrinking: when a property fails, reduce the counterexample toward simpler
 /// values by shrinking each component independently (a product-type shrink).
 impl @shrink.Shrink for Complex with fn shrink(self) {
-  let { real, imag } = self
+  let { real, imag, } = self
   @shrink.Shrink::shrink(real)
-  .map(r => Complex::{ real: r, imag })
-  .concat(@shrink.Shrink::shrink(imag).map(i => Complex::{ real, imag: i }))
+  .map(r => Complex::{ real: r, imag, })
+  .concat(@shrink.Shrink::shrink(imag).map(i => Complex::{ real, imag: i, }))
 }
 
 ///|
@@ -52,7 +52,7 @@ impl @debug.Debug for Complex with fn to_repr(self) {
 // ---------------------------------------------------------------------------
 
 ///|
-let one : Complex = { real: 1.0, imag: 0.0 }
+let one : Complex = { real: 1.0, imag: 0.0, }
 
 ///|
 /// Relative tolerance for approximate comparisons: two values may differ by
@@ -208,7 +208,7 @@ test "prop: abs(a * b) ~= abs(a) * abs(b)" {
 test "prop: conjugate(a) * a ~= (|a|^2, 0)" {
   @quickcheck.check((a : Complex) => {
     let prod = a.conjugate() * a
-    close(prod, { real: a.abs() * a.abs(), imag: 0.0 })
+    close(prod, { real: a.abs() * a.abs(), imag: 0.0, })
   })
 }
 
