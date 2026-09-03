@@ -21,12 +21,12 @@ pub impl Show for Complex with fn output(self, logger) {
 ///|
 /// @alert deprecated "Use the structure directly instead"
 pub fn Complex::new(real : Double, imag : Double) -> Complex {
-  { real, imag }
+  { real, imag, }
 }
 
 ///|
 pub impl Add for Complex with fn add(self, other) {
-  Complex::{ real: self.real + other.real, imag: self.imag + other.imag }
+  Complex::{ real: self.real + other.real, imag: self.imag + other.imag, }
 }
 
 ///|
@@ -39,12 +39,12 @@ pub impl Mul for Complex with fn mul(self, other) {
 
 ///|
 pub impl Sub for Complex with fn sub(self, other) {
-  Complex::{ real: self.real - other.real, imag: self.imag - other.imag }
+  Complex::{ real: self.real - other.real, imag: self.imag - other.imag, }
 }
 
 ///|
 pub impl Neg for Complex with fn neg(self) {
-  Complex::{ real: -self.real, imag: -self.imag }
+  Complex::{ real: -self.real, imag: -self.imag, }
 }
 
 ///|
@@ -65,15 +65,15 @@ pub fn Complex::abs(self : Complex) -> Double {
 ///|
 /// Calculate the conjugate of a complex number
 pub fn Complex::conjugate(self : Complex) -> Complex {
-  Complex::{ real: self.real, imag: -self.imag }
+  Complex::{ real: self.real, imag: -self.imag, }
 }
 
 ///|
 pub fn Complex::reciprocal(self : Complex) -> Complex {
   let denom : Double = self.real * self.real + self.imag * self.imag
-  Complex::{ real: self.real / denom, imag: -self.imag / denom }
+  Complex::{ real: self.real / denom, imag: -self.imag / denom, }
 }
 
 ///|
 /// The zero complex number.
-pub let zero : Complex = { real: 0, imag: 0 }
+pub let zero : Complex = { real: 0, imag: 0, }

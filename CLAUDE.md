@@ -39,4 +39,4 @@ Tests use MoonBit's built-in testing framework with `inspect()` for assertions. 
 
 ## Package Management
 
-This is a published MoonBit package (`justjoheinz/complex`) that can be installed via `moon add justjoheinz/complex`. The project uses semantic versioning and is currently at version 0.4.1.
+This is a published MoonBit package (`justjoheinz/complex`) that can be installed via `moon add justjoheinz/complex`. The project uses semantic versioning and is currently at version 0.4.2.
